@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 1000,
+    "max": 1000
+  },
+  "authentication": {
+    "secret": "a9fd713465816bb51fa38c84154477d6f6c9bff19b8a8f9e847e5e2b2a70ab6db7f31dad2e055b10eeda72252681095a365cf284c668a383c8d47b16d2558d3c2de7420d6f7f824c525ca90c8dfffd3947fca0b723bc60debdbafe378d1907187458ab26bcdb554c7bccc00dde5350287df5d42a0a80c4f6ceb583b95a268e25555fa257fe8c30216ad03a3034cfa43c484a3e071e60dc37b906027c1241d7887687bd4ed0ced516ebe326b07b2fb4be8d7dd49dab7947c8894c8f09e3a092a03723cd0d7c56f545d6c8495f9c1982eab359b36258aa845e0ac1c5fabcf08e557485ee87134e809bc90b8ba6c6f0b619d1833df214ba4bf68dc03a4452eda8a2",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://deksart.com",
+      "subject": "auth",
+      "issuer": "deksart",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "username",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/drelloklon_server"
+}
